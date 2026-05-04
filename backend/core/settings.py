@@ -32,6 +32,7 @@ DEBUG = env.bool('DEBUG', default=True)
 WHATSAPP_TOKEN = env('WHATSAPP_TOKEN', default='')
 WHATSAPP_PHONE_NUMBER_ID = env('WHATSAPP_PHONE_NUMBER_ID', default='')
 VERIFY_TOKEN = env('VERIFY_TOKEN', default='')
+GROQ_API_KEY = env('GROQ_API_KEY')
 
 ALLOWED_HOSTS = []
 

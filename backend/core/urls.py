@@ -3,7 +3,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from businesses.views import BusinessViewSet, BusinessKnowledgeViewSet
 from leads.views import LeadViewSet
-from chatbot.views import ConversationViewSet, MessageViewSet
+from chatbot.views import ConversationViewSet, MessageViewSet, ChatMessageView
 from whatsapp.views import WhatsAppWebhookView
 
 router = DefaultRouter()
@@ -16,5 +16,6 @@ router.register(r'chat/messages', MessageViewSet, basename='message')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/whatsapp/webhook/', WhatsAppWebhookView.as_view(), name='whatsapp_webhook'),
+    path('api/chat/message/', ChatMessageView.as_view(), name='chat_message'),
     path('api/', include(router.urls)),
 ]

@@ -322,14 +322,14 @@
 
     function addMessage(text, sender) {
         const msgDiv = document.createElement('div');
-        msgDiv.className = \`localbiz-message localbiz-\${sender}\`;
+        msgDiv.className = `localbiz-message localbiz-${sender}`;
         msgDiv.textContent = text;
         messagesContainer.insertBefore(msgDiv, typingIndicator);
         scrollToBottom();
     }
 
     function showLeadForm() {
-        const formHtml = \`
+        const formHtml = `
             <div class="localbiz-lead-form">
                 <h4>Please share your details</h4>
                 <div class="localbiz-input-group">
@@ -340,7 +340,7 @@
                 </div>
                 <button class="localbiz-lead-btn" id="localbiz-submit-lead">Submit</button>
             </div>
-        \`;
+        `;
         const wrap = document.createElement('div');
         wrap.innerHTML = formHtml;
         messagesContainer.insertBefore(wrap, typingIndicator);
@@ -369,7 +369,7 @@
         scrollToBottom();
 
         try {
-            const res = await fetch(\`\${config.apiUrl}/api/chat/message/\`, {
+            const res = await fetch(`${config.apiUrl}/api/chat/message/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -400,7 +400,7 @@
 
     async function submitLead(name, phone, formWrap) {
         try {
-            await fetch(\`\${config.apiUrl}/api/chat/capture-lead/\`, {
+            await fetch(`${config.apiUrl}/api/chat/capture-lead/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

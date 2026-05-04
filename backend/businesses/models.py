@@ -19,7 +19,7 @@ class BusinessKnowledge(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name="knowledge_base")
     content = models.TextField()
-    embedding = VectorField(dimensions=1536)
+    embedding = VectorField(dimensions=384)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
